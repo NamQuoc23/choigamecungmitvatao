@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đặt lịch Liên Quân cùng Mít & Táo</title>
+    <meta
+      name="description"
+      content="Landing page đặt lịch chơi Liên Quân cùng Mít và Táo với các gói 1 tiếng, 3 tiếng và 1 ngày."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Mít và Táo">
+        <span class="brand-mark">MT</span>
+        <span class="brand-copy">
+          <strong>Mít & Táo</strong>
+          <small>Official booking page</small>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="Điều hướng chính">
+        <a href="#packages">Gói chơi</a>
+        <a href="#flow">Cách đặt</a>
+        <a href="#booking">Đặt lịch</a>
+      </nav>
+      <a class="header-cta" href="#booking">Chốt kèo</a>
+    </header>
+
+    <main id="top">
+      <section class="hero-section">
+        <div class="hero-content">
+          <p class="eyebrow">Liên Quân Mobile • Thách đấu mùa trước</p>
+          <h1>Đặt lịch chơi Liên Quân cùng Mít và Táo</h1>
+          <p class="hero-copy">
+            Chọn gói, gửi khung giờ rảnh, rồi vào sảnh với hai chiến hữu có visual
+            khó đoán nhưng tinh thần leo rank rất rõ ràng.
+          </p>
+          <div class="hero-actions">
+            <a class="primary-button" href="#packages">Xem gói chơi</a>
+            <a class="secondary-button" href="#booking">Đặt lịch ngay</a>
+          </div>
+        </div>
+
+        <div class="duo-showcase" aria-label="Mít và Táo">
+          <article class="player-card player-card-mit">
+            <img src="./Mít.jpg" alt="Mít" />
+            <div>
+              <span>Carry tinh thần</span>
+              <strong>Mít</strong>
+            </div>
+          </article>
+          <article class="player-card player-card-tao">
+            <img src="./Táo.jpg" alt="Táo" />
+            <div>
+              <span>Call team căng</span>
+              <strong>Táo</strong>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="stats-strip" aria-label="Điểm nổi bật">
+        <div>
+          <strong>3</strong>
+          <span>gói linh hoạt</span>
+        </div>
+        <div>
+          <strong>Voice</strong>
+          <span>call trong lúc chơi</span>
+        </div>
+        <div>
+          <strong>Rank / thường</strong>
+          <span>tùy mood mỗi buổi</span>
+        </div>
+      </section>
+
+      <section id="packages" class="section-block">
+        <div class="section-heading">
+          <p class="eyebrow">Gói chơi</p>
+          <h2>Chọn thời lượng hợp với hôm nay</h2>
+        </div>
+
+        <div class="package-grid">
+          <article class="package-card">
+            <div class="package-top">
+              <span class="package-icon">01</span>
+              <p>Gọn nhẹ</p>
+            </div>
+            <h3>Gói một tiếng</h3>
+            <p class="package-desc">
+              Vào vài trận nhanh, làm nóng tay hoặc giải quyết nhiệm vụ ngày.
+            </p>
+            <ul>
+              <li>Phù hợp cho lịch bận</li>
+              <li>Ưu tiên trận nhanh, ít setup</li>
+              <li>Có thể chọn rank hoặc thường</li>
+            </ul>
+            <a class="package-button" href="#booking" data-package="Gói một tiếng">
+              Chọn gói này
+            </a>
+          </article>
+
+          <article class="package-card featured">
+            <div class="package-top">
+              <span class="package-icon">03</span>
+              <p>Được chọn nhiều</p>
+            </div>
+            <h3>Gói ba tiếng</h3>
+            <p class="package-desc">
+              Đủ dài để bắt nhịp, leo vài sao, đổi chiến thuật và giữ không khí vui.
+            </p>
+            <ul>
+              <li>Hợp cho duo hoặc team nhiều trận</li>
+              <li>Có thời gian test tướng, đổi lane</li>
+              <li>Dễ xếp lịch buổi tối hoặc cuối tuần</li>
+            </ul>
+            <a class="package-button" href="#booking" data-package="Gói ba tiếng">
+              Chọn gói này
+            </a>
+          </article>
+
+          <article class="package-card">
+            <div class="package-top">
+              <span class="package-icon">24</span>
+              <p>Marathon</p>
+            </div>
+            <h3>Gói một ngày</h3>
+            <p class="package-desc">
+              Dành cho kèo chơi dài, leo rank nghiêm túc hoặc một ngày game trọn gói.
+            </p>
+            <ul>
+              <li>Chia ca chơi và nghỉ linh hoạt</li>
+              <li>Phù hợp dịp cuối tuần</li>
+              <li>Có thể thống nhất mục tiêu trước</li>
+            </ul>
+            <a class="package-button" href="#booking" data-package="Gói một ngày">
+              Chọn gói này
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <section id="flow" class="section-block flow-section">
+        <div class="section-heading">
+          <p class="eyebrow">Cách đặt</p>
+          <h2>Ba bước là vào sảnh</h2>
+        </div>
+        <div class="flow-grid">
+          <article>
+            <span>1</span>
+            <h3>Chọn gói</h3>
+            <p>Pick một tiếng, ba tiếng hoặc một ngày theo lịch rảnh của bạn.</p>
+          </article>
+          <article>
+            <span>2</span>
+            <h3>Gửi lịch</h3>
+            <p>Điền ngày, giờ, mode muốn chơi và ghi chú về rank hoặc tướng.</p>
+          </article>
+          <article>
+            <span>3</span>
+            <h3>Chốt giờ</h3>
+            <p>Mít và Táo xác nhận lại khung giờ, rồi cả team vào game.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="booking" class="booking-section">
+        <div class="booking-copy">
+          <p class="eyebrow">Đặt lịch</p>
+          <h2>Gửi kèo cho Mít và Táo</h2>
+          <p>
+            Form này tạo sẵn tin nhắn đặt lịch để bạn gửi qua kênh liên hệ mong muốn.
+            Có giá, link Discord, Zalo hoặc fanpage thì mình có thể gắn vào đây sau.
+          </p>
+        </div>
+
+        <form class="booking-form" id="bookingForm">
+          <label>
+            Tên của bạn
+            <input id="playerName" name="playerName" type="text" placeholder="Ví dụ: Nam" />
+          </label>
+          <label>
+            Gói muốn đặt
+            <select id="packageSelect" name="packageSelect">
+              <option>Gói một tiếng</option>
+              <option selected>Gói ba tiếng</option>
+              <option>Gói một ngày</option>
+            </select>
+          </label>
+          <div class="form-row">
+            <label>
+              Ngày chơi
+              <input id="playDate" name="playDate" type="date" />
+            </label>
+            <label>
+              Giờ bắt đầu
+              <input id="playTime" name="playTime" type="time" />
+            </label>
+          </div>
+          <label>
+            Ghi chú
+            <textarea
+              id="note"
+              name="note"
+              rows="4"
+              placeholder="Rank hiện tại, mode muốn chơi, tướng/lane yêu thích..."
+            ></textarea>
+          </label>
+          <button class="primary-button full-button" type="submit">Tạo tin nhắn đặt lịch</button>
+          <output id="bookingMessage" class="booking-message" aria-live="polite"></output>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <strong>Mít & Táo</strong>
+        <p>© 2026 Mít & Táo. All rights reserved.</p>
+        <small>Fan-made booking page. Liên Quân Mobile thuộc sở hữu của đơn vị phát hành tương ứng.</small>
+      </div>
+      <a href="#top">Lên đầu trang</a>
+    </footer>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
