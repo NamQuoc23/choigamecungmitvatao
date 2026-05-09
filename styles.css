@@ -13,6 +13,7 @@
   --green: #69d28c;
   --shadow: 0 24px 72px rgba(0, 0, 0, 0.5);
   --radius: 10px;
+  --mobile-content: min(calc(100vw - 24px), 280px);
 }
 
 * {
@@ -21,16 +22,18 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   margin: 0;
+  overflow-x: hidden;
   min-height: 100vh;
   font-family: "Be Vietnam Pro", system-ui, sans-serif;
   color: var(--text);
   background:
-    linear-gradient(180deg, rgba(8, 8, 6, 0.5), rgba(8, 8, 6, 0.98) 58%),
-    url("./Ảnh nền liên quân.jpg") center top / auto 58vh no-repeat,
+    linear-gradient(180deg, rgba(8, 8, 6, 0.22), rgba(8, 8, 6, 0.86) 38%, rgba(8, 8, 6, 1) 68%),
+    url("./Ảnh nền liên quân.jpg") center 70px / auto 38vh no-repeat,
     var(--bg);
 }
 
@@ -89,6 +92,7 @@ textarea {
 .brand {
   gap: 10px;
   min-width: 0;
+  max-width: calc(100vw - 116px);
   font-weight: 800;
 }
 
@@ -157,8 +161,10 @@ textarea {
 }
 
 .header-cta {
+  display: none;
   min-height: 40px;
-  padding: 0 13px;
+  padding: 0 11px;
+  font-size: 0.88rem;
   white-space: nowrap;
 }
 
@@ -176,21 +182,34 @@ textarea {
 }
 
 main {
-  width: min(1160px, calc(100% - 28px));
+  width: var(--mobile-content);
   margin: 0 auto;
 }
 
 .hero-section {
   display: grid;
-  gap: 26px;
-  min-height: calc(100svh - 65px);
-  padding: 38px 0 28px;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 18px;
+  min-height: auto;
+  padding: 218px 0 28px;
 }
 
 .hero-content {
-  display: grid;
-  align-content: end;
-  min-height: 34svh;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.hero-panel {
+  width: var(--mobile-content);
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+  padding: 18px;
+  border: 1px solid rgba(255, 226, 151, 0.18);
+  border-radius: var(--radius);
+  background: rgba(8, 8, 6, 0.82);
+  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.36);
+  backdrop-filter: blur(14px);
 }
 
 .eyebrow {
@@ -210,18 +229,27 @@ p {
 }
 
 h1 {
+  width: 100%;
+  min-width: 0;
   max-width: 780px;
-  margin-bottom: 18px;
-  font-size: clamp(2.35rem, 13vw, 4.6rem);
-  line-height: 0.98;
+  margin-bottom: 14px;
+  font-size: clamp(1.8rem, 7.4vw, 4.6rem);
+  line-height: 1.08;
   letter-spacing: 0;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+h1 span {
+  display: block;
 }
 
 h2 {
   margin-bottom: 0;
-  font-size: clamp(1.9rem, 9vw, 3.7rem);
-  line-height: 1.02;
+  font-size: clamp(1.65rem, 7.3vw, 3.7rem);
+  line-height: 1.08;
   letter-spacing: 0;
+  overflow-wrap: break-word;
 }
 
 h3 {
@@ -230,11 +258,18 @@ h3 {
 }
 
 .hero-copy {
-  max-width: 680px;
-  margin-bottom: 22px;
+  width: 100%;
+  min-width: 0;
+  max-width: calc(100vw - 60px);
+  margin-bottom: 18px;
   color: var(--muted);
-  font-size: 1rem;
-  line-height: 1.7;
+  font-size: 0.96rem;
+  line-height: 1.62;
+  overflow-wrap: anywhere;
+}
+
+.hero-copy span {
+  display: block;
 }
 
 .hero-actions {
@@ -245,14 +280,18 @@ h3 {
 
 .duo-showcase {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  min-width: 0;
+  max-width: 100%;
   gap: 10px;
   align-items: end;
 }
 
 .player-card {
   position: relative;
-  min-height: 260px;
+  min-width: 0;
+  max-width: 100%;
+  min-height: 238px;
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -269,8 +308,10 @@ h3 {
 
 .player-card img {
   width: 100%;
+  min-width: 0;
+  max-width: 100%;
   height: 100%;
-  min-height: 260px;
+  min-height: 238px;
   object-fit: cover;
   display: block;
 }
@@ -310,7 +351,7 @@ h3 {
 
 .stats-strip {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
   gap: 1px;
   margin-bottom: 28px;
   overflow: hidden;
@@ -351,13 +392,16 @@ h3 {
 .package-grid,
 .flow-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
   gap: 12px;
 }
 
 .package-card,
 .flow-grid article,
 .booking-form {
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background:
@@ -461,14 +505,16 @@ h3 {
 
 .booking-section {
   display: grid;
-  gap: 22px;
+  gap: 18px;
   padding: 46px 0;
 }
 
 .booking-form {
   display: grid;
-  gap: 16px;
-  padding: 18px;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 14px;
+  width: 100%;
+  padding: 16px;
 }
 
 .booking-form label {
@@ -480,25 +526,30 @@ h3 {
 }
 
 .form-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
   align-items: stretch;
-  flex-direction: column;
-  gap: 16px;
+  gap: 14px;
+  width: 100%;
 }
 
 input,
 select,
 textarea {
+  display: block;
   width: 100%;
+  max-width: 100%;
   border: 1px solid rgba(255, 226, 151, 0.18);
   border-radius: var(--radius);
   background: rgba(255, 255, 255, 0.08);
   color: var(--text);
   outline: none;
+  appearance: none;
 }
 
 input,
 select {
-  min-height: 50px;
+  height: 52px;
   padding: 0 14px;
 }
 
@@ -538,11 +589,148 @@ textarea:focus {
   display: block;
 }
 
+.payment-section {
+  display: none;
+  padding: 14px 0 56px;
+}
+
+.payment-section.is-visible,
+.payment-section:target {
+  display: block;
+}
+
+.payment-heading {
+  margin-bottom: 18px;
+}
+
+.payment-heading p {
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.payment-grid,
+.payment-methods {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 14px;
+}
+
+.payment-summary,
+.pay-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(180deg, rgba(242, 195, 91, 0.12), rgba(12, 10, 8, 0.9)),
+    var(--surface);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.28);
+}
+
+.payment-summary {
+  padding: 18px;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  margin-bottom: 16px;
+  padding: 0 10px;
+  border: 1px solid rgba(242, 195, 91, 0.36);
+  border-radius: 999px;
+  background: rgba(242, 195, 91, 0.12);
+  color: var(--gold);
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.payment-summary dl,
+.pay-card dl {
+  display: grid;
+  gap: 10px;
+  margin: 0 0 18px;
+}
+
+.payment-summary dl div,
+.pay-card dl div {
+  display: grid;
+  gap: 4px;
+  padding: 12px;
+  border: 1px solid rgba(255, 226, 151, 0.12);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.045);
+}
+
+dt {
+  color: var(--soft);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+dd {
+  margin: 0;
+  color: var(--text);
+  font-weight: 800;
+  overflow-wrap: anywhere;
+}
+
+.pay-card {
+  padding: 16px;
+}
+
+.pay-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.pay-card-head span {
+  display: grid;
+  place-items: center;
+  min-width: 54px;
+  height: 38px;
+  border: 1px solid rgba(242, 195, 91, 0.42);
+  border-radius: var(--radius);
+  color: var(--gold);
+  font-size: 0.82rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.pay-card-head strong {
+  font-size: 1.2rem;
+}
+
+.qr-frame {
+  display: grid;
+  place-items: center;
+  margin-bottom: 14px;
+  padding: 10px;
+  border: 1px solid rgba(255, 226, 151, 0.16);
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, rgba(255, 249, 236, 0.96), rgba(242, 195, 91, 0.82));
+}
+
+.qr-image {
+  display: block;
+  width: 100%;
+  max-width: 230px;
+  max-height: 250px;
+  border-radius: calc(var(--radius) - 2px);
+  object-fit: contain;
+  background: #fff9ec;
+}
+
 .site-footer {
   flex-direction: column;
   align-items: stretch;
   gap: 10px;
-  width: min(1160px, calc(100% - 28px));
+  width: var(--mobile-content);
   margin: 0 auto;
   padding: 28px 0 42px;
   border-top: 1px solid var(--line);
@@ -565,6 +753,15 @@ textarea:focus {
 }
 
 @media (min-width: 640px) {
+  main,
+  .site-footer {
+    width: min(1160px, calc(100% - 28px));
+  }
+
+  .hero-panel {
+    width: auto;
+  }
+
   body {
     background:
       linear-gradient(180deg, rgba(8, 8, 6, 0.28), rgba(8, 8, 6, 0.98) 68%),
@@ -581,13 +778,64 @@ textarea:focus {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .form-row,
   .site-footer {
     flex-direction: row;
   }
 
-  .form-row label {
-    flex: 1;
+  .form-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .payment-methods {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 380px) {
+  .site-header {
+    gap: 8px;
+    padding-inline: 10px;
+  }
+
+  .brand-mark {
+    width: 36px;
+    height: 36px;
+  }
+
+  .brand {
+    max-width: calc(100vw - 104px);
+  }
+
+  .brand-copy strong {
+    font-size: 0.92rem;
+  }
+
+  .header-cta {
+    min-height: 38px;
+    padding-inline: 10px;
+    font-size: 0.82rem;
+  }
+
+  main,
+  .site-footer {
+    width: min(1160px, calc(100% - 20px));
+  }
+
+  .hero-panel {
+    padding: 16px;
+  }
+
+  h1 {
+    font-size: clamp(1.85rem, 9vw, 3.2rem);
+  }
+
+  .duo-showcase {
+    gap: 8px;
+  }
+
+  .player-card,
+  .player-card img {
+    min-height: 218px;
   }
 }
 
@@ -612,6 +860,10 @@ textarea:focus {
     display: block;
   }
 
+  .header-cta {
+    display: inline-flex;
+  }
+
   .hero-section {
     grid-template-columns: minmax(0, 0.92fr) minmax(390px, 0.78fr);
     gap: clamp(28px, 5vw, 70px);
@@ -620,7 +872,21 @@ textarea:focus {
   }
 
   .hero-content {
-    min-height: 0;
+    display: grid;
+    align-content: center;
+  }
+
+  .hero-panel {
+    width: auto;
+    padding: 0;
+    border: none;
+    background: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
+  }
+
+  .hero-copy {
+    max-width: 680px;
   }
 
   .duo-showcase {
@@ -647,9 +913,13 @@ textarea:focus {
     padding: 78px 0;
   }
 
-  .package-grid,
-  .flow-grid {
+  .package-grid {
     grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .flow-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 16px;
   }
 
@@ -672,5 +942,20 @@ textarea:focus {
 
   .booking-form {
     padding: 28px;
+  }
+
+  .payment-section {
+    padding: 10px 0 84px;
+  }
+
+  .payment-grid {
+    grid-template-columns: 0.78fr 1.22fr;
+    gap: 18px;
+    align-items: start;
+  }
+
+  .payment-summary,
+  .pay-card {
+    padding: 24px;
   }
 }

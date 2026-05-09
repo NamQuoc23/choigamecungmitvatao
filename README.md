@@ -15,7 +15,7 @@ Then open [http://localhost:8000](http://localhost:8000).
 ## Nội dung
 
 - Hero giới thiệu đặt lịch chơi Liên Quân cùng Mít và Táo
-- Ba gói: `Gói một tiếng`, `Gói ba tiếng`, `Gói một ngày`
+- Ba gói: `Gói Khởi Động`, `Gói Tiêu Chuẩn`, `Gói Cao Cấp`
 - Khu vực cách đặt lịch
 - Form tạo tin nhắn đặt lịch để gửi qua kênh liên hệ mong muốn
 
